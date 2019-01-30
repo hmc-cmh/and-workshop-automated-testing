@@ -10,3 +10,6 @@ yarn-error.log*
 
 .idea
 .vscode
+
+#test
+/coverage
