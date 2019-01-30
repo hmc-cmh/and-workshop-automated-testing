@@ -16,7 +16,6 @@ function req_ONE(g)
 
 
 
-
 const functionForRequirementThree_SHOUT=(SHOUT='my fried')=>{
   const theReturnString = `H${/^[A-Z ]+$/.test(SHOUT)?'ELLO':"ello"}, ${SHOUT}${/^[A-Z ]+$/.test(SHOUT)?'!':'.'}`
   return theReturnString;}
