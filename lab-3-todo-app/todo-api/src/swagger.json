@@ -16,12 +16,8 @@
       "get": {
         "summary": "Retrieve all TODO items",
         "operationId": "retrieveTODOs",
-        "produces": [
-          "*/*"
-        ],
-        "tags": [
-          "todos"
-        ],
+        "produces": ["*/*"],
+        "tags": ["todos"],
         "responses": {
           "200": {
             "description": "OK",
@@ -40,12 +36,8 @@
       "post": {
         "summary": "Creates a TODO item",
         "operationId": "createTODO",
-        "consumes": [
-          "application/json"
-        ],
-        "tags": [
-          "todos"
-        ],
+        "consumes": ["application/json"],
+        "tags": ["todos"],
         "parameters": [
           {
             "name": "createTODOItem",
@@ -83,12 +75,8 @@
       "put": {
         "summary": "Update a TODO item",
         "operationId": "updateTODO",
-        "consumes": [
-          "application/json"
-        ],
-        "tags": [
-          "todos"
-        ],
+        "consumes": ["application/json"],
+        "tags": ["todos"],
         "parameters": [
           {
             "name": "id",
@@ -125,15 +113,11 @@
           }
         }
       },
-      "delete" : {
+      "delete": {
         "summary": "Deletes a TODO item",
         "operationId": "deleteTODO",
-        "consumes": [
-          "application/json"
-        ],
-        "tags": [
-          "todos"
-        ],
+        "consumes": ["application/json"],
+        "tags": ["todos"],
         "parameters": [
           {
             "name": "id",
@@ -172,11 +156,7 @@
     },
     "TODOItem": {
       "type": "object",
-      "required": [
-        "_id",
-        "text",
-        "completed"
-      ],
+      "required": ["_id", "text", "completed"],
       "properties": {
         "_id": {
           "type": "string",
@@ -195,14 +175,8 @@
     },
     "CreateTODOItem": {
       "type": "object",
-      "required": [
-        "text"
-      ],
+      "required": ["text"],
       "properties": {
-        "_id": {
-          "type": "string",
-          "description": "ID of the TODO item"
-        },
         "text": {
           "type": "string",
           "description": "Description of your TODO item"
@@ -211,14 +185,8 @@
     },
     "UpdateTODOItem": {
       "type": "object",
-      "required": [
-        "text"
-      ],
+      "required": ["text"],
       "properties": {
-        "_id": {
-          "type": "string",
-          "description": "ID of the TODO item"
-        },
         "text": {
           "type": "string",
           "description": "Description of your TODO item"
@@ -231,9 +199,7 @@
     },
     "Error": {
       "type": "object",
-      "required": [
-        "code"
-      ],
+      "required": ["code"],
       "properties": {
         "code": {
           "type": "string"
