@@ -9,7 +9,7 @@ function req_ONE(g)
 {const r = "Hello";
 
   const m = [r, g].join(', ');
-
+  
   return m + ".";
 }
 
