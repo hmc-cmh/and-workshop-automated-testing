@@ -11,7 +11,7 @@ out['req-FOUR'] = function FUNCTION_FOUR(input = 'my friend') {
     input = input.slice(0, 2)
 ;  }
 
-  let out = 'Hello, ';
+  let out = 'Hello, '; 
 
   for( i in input ) {
     out = out + input[i] + ' and ';
