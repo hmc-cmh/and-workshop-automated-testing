@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for libs.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="index.html">All files</a> libs.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">75% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>12/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">42.86% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>3/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/3</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">80% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>12/15</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">let out = new Object();
+&nbsp;
+out = {
+  'req-one': req_ONE,
+};
+&nbsp;
+function <span class="fstat-no" title="function not covered" >req_ONE(</span>g) {
+  const r = <span class="cstat-no" title="statement not covered" >'Hello';</span>
+&nbsp;
+  const m = <span class="cstat-no" title="statement not covered" >[r, g].join(', ');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return `${m}.`;</span>
+}
+&nbsp;
+const functionForRequirementThree_SHOUT = (SHOUT = <span class="branch-0 cbranch-no" title="branch not covered" >'my fried')</span> =&gt; {
+  const theReturnString = `H${
+    /^[A-Z ]+$/.test(SHOUT) ? <span class="branch-0 cbranch-no" title="branch not covered" >'ELLO' </span>: 'ello'
+  }, ${SHOUT}${/^[A-Z ]+$/.test(SHOUT) ? <span class="branch-0 cbranch-no" title="branch not covered" >'!' </span>: '.'}`;
+  return theReturnString;
+};
+&nbsp;
+const foo = (NAMESTRINGNOTNULL) =&gt; {
+  r = 'Hello';
+  // AMAZING TRICK TYPOF OF and NULL, WOOP WOOP!
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof NAMESTRINGNOTNULL === 'object') <span class="cstat-no" title="statement not covered" >return 'Hello, my friend.';</span>
+&nbsp;
+  const m = [r, NAMESTRINGNOTNULL].join(', ');
+&nbsp;
+  return `${m}.`;
+};
+&nbsp;
+out = {
+  ...out,
+  'req-TWO': foo,
+  'req-3': functionForRequirementThree_SHOUT,
+};
+&nbsp;
+module.exports = out;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Jan 30 2019 13:45:51 GMT+0000 (Greenwich Mean Time)
+</div>
+</div>
+<script src="prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="sorter.js"></script>
+</body>
+</html>

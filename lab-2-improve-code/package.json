@@ -14,6 +14,7 @@
   "scripts": {
     "start": "node src/index.js",
     "test": "jest .",
+    "test:coverage": "jest --coverage",
     "lint": "eslint --fix src/**"
   },
   "dependencies": {
@@ -22,7 +23,20 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "npm run test:coverage"
+    }
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80
+      }
     }
   }
 }
