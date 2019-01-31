@@ -3,7 +3,11 @@ const bodyParser = require("body-parser").json();
 const cors = require("cors")();
 const pino = require("express-pino-logger")();
 const swaggerUi = require("swagger-ui-express");
+const mongoose = require("mongoose");
 const swaggerDocument = require("./swagger.json");
+
+const mongoURI = process.env.MONGO_URI || "mongodb://localhost:27017/todos";
+mongoose.connect(mongoURI, { useNewUrlParser: true });
 
 express
   .use(bodyParser)
