@@ -54,7 +54,7 @@ Run the container:
 docker run -p 3000:80 todo-web
 ```
 
-And using docker compose:
+And using docker compose (to spin up api and FE):
 
 ```bash
 docker-compose up --build
