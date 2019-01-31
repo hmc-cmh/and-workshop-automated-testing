@@ -7,7 +7,7 @@ const error404 = {
   message: "Not Found"
 };
 
-module.exports = (req, res) => {
+module.exports = async (req, res) => {
   const errors = validationResult(req).formatWith(errorFormatter);
   if (!errors.isEmpty()) {
     return res.status(400).json({
@@ -16,7 +16,7 @@ module.exports = (req, res) => {
     });
   }
 
-  Todo.findByIdAndUpdate(req.params.id, req.body)
+  await Todo.findByIdAndUpdate(req.params.id, req.body)
     .then(data =>
       data ? res.status(204).send() : res.status(404).json(error404)
     )

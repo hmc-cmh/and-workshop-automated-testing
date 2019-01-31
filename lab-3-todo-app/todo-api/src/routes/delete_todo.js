@@ -5,8 +5,8 @@ const error404 = {
   message: "Not Found"
 };
 
-module.exports = (req, res) => {
-  Todo.findByIdAndDelete(req.params.id)
+module.exports = async (req, res) => {
+  await Todo.findByIdAndDelete(req.params.id)
     .then(data =>
       data ? res.status(204).send() : res.status(404).json(error404)
     )
