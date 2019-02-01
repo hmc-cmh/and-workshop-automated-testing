@@ -54,10 +54,7 @@ class Todo extends Component {
     const { text } = this.state;
     const { data } = await axios.post(TODO_API_URL, { text });
     this.setState(prevState => ({
-      todos: [
-        ...prevState.todos,
-        data,
-      ],
+      todos: [...prevState.todos, data],
       text: '',
     }));
   }
@@ -101,6 +98,7 @@ class Todo extends Component {
       <Fragment>
         <div style={{ display: 'flex' }}>
           <TextField
+            data-test-id="textfield"
             type="text"
             name="task"
             label={label}
@@ -113,6 +111,7 @@ class Todo extends Component {
 
           <Fab
             disabled={!text}
+            data-test-id="fabbutton"
             onClick={this.createTodo}
             size="medium"
             color="primary"
@@ -125,23 +124,18 @@ class Todo extends Component {
         <Divider style={{ marginTop: 18, marginBottom: 12 }} />
 
         <div style={{ display: 'block' }}>
-          <Typography variant="h5">
-            My todo list
-          </Typography>
+          <Typography variant="h5">My todo list</Typography>
 
-          { todos.length ? (
-            <List>
-              { todos.map(todo => (
+          {todos.length ? (
+            <List data-test-id="list">
+              {todos.map(todo => (
                 <ListItem key={todo.id} button onClick={() => this.updateTodo(todo)}>
-                  <Checkbox
-                    checked={todo.completed}
-                    color="secondary"
-                  />
+                  <Checkbox data-test-id="check" checked={todo.completed} color="secondary" />
 
                   <ListItemText primary={todo.text} />
 
                   <ListItemSecondaryAction>
-                    <IconButton onClick={() => this.deleteTodo(todo)}>
+                    <IconButton data-test-id="bin" onClick={() => this.deleteTodo(todo)}>
                       <DeleteIcon color="secondary" />
                     </IconButton>
                   </ListItemSecondaryAction>
